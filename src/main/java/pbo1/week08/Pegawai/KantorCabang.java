@@ -76,8 +76,7 @@ public class KantorCabang {
         if(jumlahPegawai<MAX_PEGAWAI){
             pegawai[jumlahPegawai]=pegawaiNew;
             jumlahPegawai++;
-        }
-        
+        } else System.out.println("FULL");        
     }
     
     /*
@@ -115,7 +114,7 @@ public class KantorCabang {
     }
     
     public Pegawai findPegawai(int employeeID){
-        for(int i=0;i<jumlahPegawai-1;i++){
+        for(int i=0;i<jumlahPegawai;i++){
             if(Integer.parseInt(pegawai[i].getEmployeeID())==employeeID){
                 return pegawai[i];
             }
@@ -125,7 +124,7 @@ public class KantorCabang {
     }
     
     public Pegawai findPegawai(String name){
-        for(int i=0;i<jumlahPegawai-1;i++){
+        for(int i=0;i<jumlahPegawai;i++){
             if(pegawai[i].getName().equals(name)){
                 return pegawai[i];
             }
