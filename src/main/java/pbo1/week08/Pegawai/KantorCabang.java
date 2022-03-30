@@ -86,7 +86,7 @@ public class KantorCabang {
     */
     public void removePegawai(int index){
         pegawai[index]=pegawai[jumlahPegawai-1];
-        pegawai[jumlahPegawai]=null;
+        pegawai[jumlahPegawai-1]=null;
         jumlahPegawai--;
     }
     
@@ -114,6 +114,25 @@ public class KantorCabang {
         return gajiMin;
     }
     
+    public Pegawai findPegawai(int employeeID){
+        for(int i=0;i<jumlahPegawai-1;i++){
+            if(Integer.parseInt(pegawai[i].getEmployeeID())==employeeID){
+                return pegawai[i];
+            }
+        }
+        System.out.println("Pegawai not found");
+        return new Pegawai("-");        
+    }
+    
+    public Pegawai findPegawai(String name){
+        for(int i=0;i<jumlahPegawai-1;i++){
+            if(pegawai[i].getName().equals(name)){
+                return pegawai[i];
+            }
+        }
+        System.out.println("Pegawai not found");
+        return new Pegawai("-");        
+    }
     @Override
     public String toString(){
         String print="{";
